@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <!-- bootstrap cdn stuff -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+    <title>Kevin Johnson & Jake Barker 3710 Semester Project</title>
+  </head>
+  <body>
+    <!-- navbar -->
+      <!-- none right now... -->
+
+    <!-- jumbotron -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1 class="display-3">3710 Semester Project</h1>
+        <br>
+        <h4 class="display-5">Kevin Johson</h4>
+        <h4 class="display-5">Jake Barker</h4>
+        <p class="lead">This is a simple site dedicated to displaying statistics on password and hash complexity</p>
+      </div>
+      <div class="container">
+        <hr class="my-4">
+      </div>
+    </div>
+
+    <!-- tabs -->
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Custom Password Stats</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Generalized Stats</a>
+      </li>
+    </ul>
+
+    <!-- password input -->
+    <br>
+    <div class="container">
+      <h2 class="">Input a Password (<em>not one you actually use</em>). <br>See How Strong it is</h2>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <button class="btn btn-outline-secondary" type="button" id="button-addon1">Submit</button>
+        </div>
+        <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+      </div>
+    </div>
+
+    <!-- stats for each part of given password explained -->
+    <br>
+    <br>
+    <div class="container-lg">
+      <div class="row">
+        <div class="col-sm">
+          <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action active">
+              Password overview
+            </a>
+            <a href="#" class="list-group-item list-group-item-action">Stats on characters</a>
+            <a href="#" class="list-group-item list-group-item-action">Stats on length</a>
+            <a href="#" class="list-group-item list-group-item-action">other stats...</a>
+          </div>
+        </div>
+        <div class="col-sm-8" style="">
+           <div class="h-100 w-100 d-inline-block" style="background-color:">
+             <h5>This section shows info from tabs on the left</h5>
+             <ul>
+               <li>Some info about the password here:</li>
+               <li>Estimated Complexity</li>
+               <li>Time to break (in minutes)</li>
+             </ul>
+             etc.
+           </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Graph -->
+    <br>
+    <div class="container col-xl-8 col-lg-7">
+      <div class="card shadow mb-4">
+        <!-- Card Header - Dropdown -->
+        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+          <h6 class="m-0 font-weight-bold text-primary">Some Graphed Out Stats</h6>
+          <div class="dropdown no-arrow">
+            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+              <div class="dropdown-header">Dropdown Header:</div>
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </div>
+        </div>
+        <!-- Card Body -->
+        <div class="card-body">
+          <div class="chart-area"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+            A chart with stuff graphed out by Matlab (maybe just a generated image?)
+            <canvas id="myAreaChart" width="717" height="240" class="chartjs-render-monitor" style="display: block; width: 717px; height: 240px;"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hash-->
+    <div class="container">
+      <hr>
+      <h3>Maybe here we pull some data from the hash which is generated in conjunction with the password</h3>
+      <p>hashy stats</p>
+      <ul>
+        <li>this hash would be hard to crack</li>
+        <li>"why?" you may ask</li>
+        <li>well, allow us to tell you</li>
+      </ul>
+    </div>
+
+    <!-- general stats info -->
+    <div class="container">
+      <hr>
+      <h3>The content under the Generalized Stats tab could just have statistics from data we pull from the web</h3>
+      <p>an explanation about passwords as a whole</p>
+      <ul>
+        <li>look, a fact!</li>
+        <li>another fact</li>
+        <li>my grandma has better passwords than you do</li>
+      </ul>
+    </div>
+
+    <br>
+    <br>
+
+  </body>
+</html>
