@@ -20,6 +20,6 @@
 #hash{
   word-break: break-all;
 }
-#time-list{
+#time-list, #super-time-list, #botnet-time-list{
   list-style: none;
 }
