@@ -1,0 +1,25 @@
+.hidden{
+  display: none;
+}
+.text-center{
+  text-align: center;
+}
+.div-center{
+  margin: 0px auto;
+}
+.blue{
+  color: dodgerblue;
+}
+.hr-80-bold{
+  width: 70%;
+  background-color: black;
+}
+#maths a:hover{
+  cursor: pointer;
+}
+#hash{
+  word-break: break-all;
+}
+#time-list{
+  list-style: none;
+}
