@@ -35,17 +35,36 @@
     </div>
 
     <!-- tabs -->
-    <ul class="nav nav-tabs">
+    <!-- <ul class="nav nav-tabs">
       <li class="nav-item">
-        <a class="nav-link active" href="#">Custom Password Stats</a>
+        <a class="nav-link active" href="#"></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Generalized Stats</a>
-      </li>
-    </ul>
+    </ul> -->
 
     <!-- stats for each part of given password explained -->
     <br>
+    <div class="container">
+      <p>
+        In most cases when you save a password the actual password isn't saved online
+        or in the software you're using.  Instead it will be encrypted as a non-reversible
+        hash via a hashing algorithm.  Though the hash may seem random it will be the same
+        every time it is computed.  When a password is inputted it's resulting hash
+        will be compared to one that is saved, if the two match then you know the password
+        is correct.
+      </p>
+      <p>
+        Sometimes a hash can be accessed by a hacker in which case if they know what hashing
+        algorithm was originally used they can try to determine what the password is
+        via a brute force technique of guessing all the possilbe combinations of letter, numbers,
+        and symbols.
+      </p>
+      <p>
+        For this project we are assuming a simple brute force algorithm is in place, there are
+        ways to speed up the process but for simplicity those aren't taken into account here.
+        We will be computing the estimated complexity of a password in conjunction with the
+        SHA-512 hashing algorithm.
+      </p>
+    </div>
     <br>
     <div class="container">
       <div class="row">
@@ -53,31 +72,36 @@
         <div id="" class="h-100 w-100 d-inline-block" style="background-color:">
           <ul>
             <li>
-              On a modern computer (8 core, 2.8 GHz) using the SHA512 hashing algorithm,
-              it takes about 0.0017 milliseconds to compute a hash. This translates to
-              about 1.7 * 10 ^ -6 seconds per password.
+              On a modern computer (8 cores, 2.8GHz) using the SHA512 hashing
+              algorithm it takes about 0.0017 milliseconds to compute/produce a
+              hash.  That ends up being roughly 1.7 * (10 ^ -6) seconds per password.
             </li>
             <li>
-              A GPU or 3D graphics card can usually performs operations at a speed of 50-100
-              times relative to the speed of a CPU.
+              A typical GPU or 3D graphics card can perform anywhere between 50 to
+              100 times the relative speed of a standard CPU. Meaning that if your
+              algorithm can use the additional processing power of a GPU it is that much faster.
             </li>
             <li>
-              We'll say that a supercomputer or botnet is able to perform calculations and
-              hashes at a speed of 100000 times a regular computer.  (you have 100000 computers
-              working at the same time)
+              A supercomputer can have any number of cores.  A botnet uses a similar
+              multi processor/core advantage by leveraging multiple computers at
+              once.  To make a point we’ll say that here it is 100,000 times the
+              speed of a regular, singular CPU.
               <ul>
                 <li>
                   <em>
-                    100k computers on a botnet is very doable, the largest one to-date is
-                    estimated to have 12 million
+                    100K computers on a botnet is very doable, the largest one to
+                    date is estimated to have around 12 million…
                   </em>
                 </li>
               </ul>
             </li>
             <br>
             <li>
-              ** on average the password will be cracked when half of the possible permutations are
-              checked. <u>(divide calculated number of possible permutations by two)</u>
+              ** It is important to note that of all the possible permutations
+              that a password of a certain length may have, the odds that the correct
+              combination will be found in the first half of the total population
+              is just that, 0.5.  So we’ll be dividing the computed “complexity”
+              of a password by 2 in order to remain consistent with that prediction.
             </li>
           </ul>
         </div>
@@ -189,7 +213,9 @@
             <div id="present-chars" class="row"></div>
             <br>
             <div id="hash" class="row"></div>
-            <br><br>
+            <br>
+            <h4 class="text-center">Estimated Times to Match Your Password in a Brute Force Attack</h4>
+            <br>
             <div id="cracktimes" class="container">
               <div class="">
                 <h4 id="regular-title" class="hidden">Regular CPU:</h4>
@@ -223,7 +249,6 @@
                   <li id="botnet-years" class="hidden"></li>
                 </ul>
               </div>
-
             </div>
           </div>
 
@@ -232,31 +257,6 @@
     </div>
 
     <!-- Hash-->
-    <div class="container">
-      <hr>
-      <h3>Maybe here we pull some data from the hash which is generated in conjunction with the password</h3>
-      <p>hashy stats</p>
-      <ul>
-        <li>this hash would be hard to crack</li>
-        <li>"why?" you may ask</li>
-        <li>well, allow us to tell you</li>
-      </ul>
-    </div>
-
-    <!-- general stats info -->
-    <div class="container">
-      <hr>
-      <h3>The content under the Generalized Stats tab could just have statistics from data we pull from the web</h3>
-      <p>an explanation about passwords as a whole</p>
-      <ul>
-        <li>look, a fact!</li>
-        <li>another fact</li>
-        <li>my grandma has better passwords than you do</li>
-      </ul>
-    </div>
-
-    <br>
-    <br>
 
   </body>
   <!-- add javascript files that need to load after document -->
